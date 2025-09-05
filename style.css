@@ -173,6 +173,19 @@ img {
   transform-origin: left;
 }
 
+/* Nav toggle animation */
+.nav-toggle.open span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
 /* Hero Section */
 .hero {
   padding: 80px 0;
@@ -318,12 +331,19 @@ img {
   justify-content: flex-end;
 }
 
-.notes-footer {
+/* Download info section */
+.download-info {
   text-align: center;
   margin-top: 40px;
-  padding: 20px;
-  background: var(--light);
+  padding: 15px;
+  background-color: #e9f7ff;
   border-radius: var(--border-radius);
+  border-left: 4px solid var(--primary);
+}
+
+.download-info p {
+  margin: 0;
+  color: var(--dark);
 }
 
 /* Footer */
@@ -336,6 +356,66 @@ img {
 
 .site-footer a {
   color: var(--success);
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #ccc;
+  margin: 0 5px;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+/* Animation for download buttons */
+.btn.small {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn.small:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+.btn.small:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+/* File size indicator */
+.file-size {
+  font-size: 0.8rem;
+  color: var(--gray);
+  margin-left: 10px;
+  align-self: center;
 }
 
 /* Responsive Design */
@@ -391,5 +471,15 @@ img {
   
   .section-header h2, .section-inner h2 {
     font-size: 1.8rem;
+  }
+  
+  .header-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .brand {
+    align-items: center;
   }
 }
