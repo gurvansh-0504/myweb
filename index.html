@@ -63,7 +63,7 @@
   <section id="about" class="section">
     <div class="container section-inner">
       <h2>About This Hub</h2>
-      <p>Hi, I’m <strong>Gurvansh</strong>. I created this hub to share concise, exam-focused notes for Computer Science B.Tech students — organized subject-wise so you can quickly download what you need and get back to studying.</p>
+      <p>Hi, I'm <strong>Gurvansh</strong>. I created this hub to share concise, exam-focused notes for Computer Science B.Tech students — organized subject-wise so you can quickly download what you need and get back to studying.</p>
     </div>
   </section>
 
@@ -72,7 +72,7 @@
     <div class="container">
       <div class="section-header">
         <h2>Download Notes — Subject-wise</h2>
-        <p>Click a subject card to download notes. All resources are completely free to use and share.</p>
+        <p>Click the download button next to any subject to get the notes. All resources are completely free to use and share.</p>
       </div>
 
       <div class="grid cards">
@@ -142,6 +142,10 @@
           </div>
         </article>
       </div>
+      
+      <div class="download-info">
+        <p><strong>Note:</strong> If you're having trouble downloading files, right-click the download button and select "Save link as..."</p>
+      </div>
     </div>
   </section>
 
@@ -151,12 +155,19 @@
       <h2>Contact & Follow</h2>
       <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
       <p>GitHub: <a href="https://github.com/gurvansh-0504" target="_blank">@gurvansh-0504</a></p>
+      <p>Request notes: <a href="mailto:your@email.com?subject=Note Request">Send me a request</a></p>
     </div>
   </section>
 
   <footer class="site-footer">
     <div class="container">
       <p>© <span id="year"></span> Be a Topper — Notes for B.Tech CSE. Hosted on GitHub Pages.</p>
+      <p class="footer-links">
+        <a href="#home">Home</a> | 
+        <a href="#about">About</a> | 
+        <a href="#notes">Notes</a> | 
+        <a href="#contact">Contact</a>
+      </p>
     </div>
   </footer>
 
@@ -183,6 +194,15 @@
           nav.classList.remove('open');
           navToggle.classList.remove('open');
         }
+      });
+    });
+    
+    // Add download tracking (optional)
+    document.querySelectorAll('a[download]').forEach(link => {
+      link.addEventListener('click', function() {
+        const fileName = this.getAttribute('download');
+        console.log(`Download started: ${fileName}`);
+        // Here you could add analytics tracking
       });
     });
   </script>
