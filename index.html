@@ -1,60 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Be a Topper</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Be a Topper — Notes & Study Material</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">MyWeb</div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#download">Download</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">Be a <span>Topper</span></div>
+        <div class="tag">B.Tech CSE — Notes & Resources</div>
+      </div>
+
+      <nav class="nav" id="nav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#notes">Notes</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- HERO -->
   <section id="home" class="hero">
-    <div class="hero-text">
-      <h1>Welcome to My Website 🚀</h1>
-      <p>This site is hosted for free Notes And study Material For B.Tech In computer Science.</p>
-      <a href="#download" class="btn">Explore</a>
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <h1>Notes & Study Material for B.Tech CSE</h1>
+        <p>Subject-wise downloadable notes, practice questions, and reference material — free to use and share. Organized for quick access and exam-ready revision.</p>
+        <div class="hero-cta">
+          <a class="btn" href="#notes">Explore Notes</a>
+          <a class="btn ghost" href="#contact">Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="card-stats">
+          <div class="stat">
+            <div class="num">6</div>
+            <div class="label">Subjects</div>
+          </div>
+          <div class="stat">
+            <div class="num">100+</div>
+            <div class="label">Pages (sample)</div>
+          </div>
+          <div class="stat">
+            <div class="num">Free</div>
+            <div class="label">Hosted on GitHub</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <p>
-      Hi, I am <strong>Gurvansh</strong>. This is my personal website where I share my projects,
-      files, Notes and ideas.
-    </p>
+  <!-- ABOUT -->
+  <section id="about" class="section container">
+    <div class="section-inner">
+      <h2>About This Hub</h2>
+      <p>Hi, I’m <strong>Gurvansh</strong>. I created this hub to share concise, exam-focused notes for Computer Science B.Tech students — organized subject-wise so you can quickly download what you need and get back to studying.</p>
+    </div>
   </section>
 
-  <!-- Download Section -->
-  <section id="download" class="section">
-    <h2>Download Section</h2>
-    <p>Click below to download my file:</p>
-    <a href="files/sample.pdf" download="MyFile.pdf" class="btn">⬇ Download File</a>
+  <!-- NOTES / DOWNLOADS -->
+  <section id="notes" class="section container">
+    <div class="section-header">
+      <h2>Download Notes — Subject-wise</h2>
+      <p>Click a subject card to download notes. If the file opens in your browser, use the "Force download" button (JS fallback).</p>
+    </div>
+
+    <div class="grid cards">
+      <!-- Maths -->
+      <article class="card">
+        <div class="card-head">
+          <h3>Mathematics</h3>
+          <p class="sub">Calculus | Linear Algebra | Differential Equations</p>
+        </div>
+        <div class="card-actions">
+          <a class="btn small" href="files/maths_notes.pdf" download="Maths_Notes.pdf">⬇ Download</a>
+          <button class="btn small outline js-download" data-file="files/maths_notes.pdf" data-name="Maths_Notes.pdf">⚡ Force</button>
+        </div>
+      </article>
+
+      <!-- Logical Thinking -->
+      <article class="card">
+        <div class="card-head">
+          <h3>Logical Thinking</h3>
+          <p class="sub">Problem Solving | Puzzles | Algorithms Thinking</p>
+        </div>
+        <div class="card-actions">
+          <a class="btn small" href="files/logical_thinking_notes.pdf" download="Logical_Thinking_Notes.pdf">⬇ Download</a>
+          <button class="btn small outline js-download" data-file="files/logical_thinking_notes.pdf" data-name="Logical_Thinking_Notes.pdf">⚡ Force</button>
+        </div>
+      </article>
+
+      <!-- Communication -->
+      <article class="card">
+        <div class="card-head">
+          <h3>Communication</h3>
+          <p class="sub">Technical Writing | Presentation Tips | Report Writing</p>
+        </div>
+        <div class="card-actions">
+          <a class="btn small" href="files/communication_notes.pdf" download="Communication_Notes.pdf">⬇ Download</a>
+          <button class="btn small outline js-download" data-file="files/communication_notes.pdf" data-name="Communication_Notes.pdf">⚡ Force</button>
+        </div>
+      </article>
+
+      <!-- Semiconductor -->
+      <article class="card">
+        <div class="card-head">
+          <h3>Semiconductor</h3>
+          <p class="sub">Materials | PN Junctions | Devices</p>
+        </div>
+        <div class="card-actions">
+          <a class="btn small" href="files/semiconductor_notes.pdf" download="Semiconductor_Notes.pdf">⬇ Download</a>
+          <button class="btn small outline js-download" data-file="files/semiconductor_notes.pdf" data-name="Semiconductor_Notes.pdf">⚡ Force</button>
+        </div>
+      </article>
+
+      <!-- Engineering Physics -->
+      <article class="card">
+        <div class="card-head">
+          <h3>Engineering Physics</h3>
+          <p class="sub">Mechanics | Waves | Modern Physics</p>
+        </div>
+        <div class="card-actions">
+          <a class="btn small" href="files/engineering_physics_notes.pdf" download="Engineering_Physics_Notes.pdf">⬇ Download</a>
+          <button class="btn small outline js-download" data-file="files/engineering_physics_notes.pdf" data-name="Engineering_Physics_Notes.pdf">⚡ Force</button>
+        </div>
+      </article>
+
+      <!-- Computer Science -->
+      <article class="card">
+        <div class="card-head">
+          <h3>Computer Science</h3>
+          <p class="sub">Data Structures | OS | DBMS | Networks</p>
+        </div>
+        <div class="card-actions">
+          <a class="btn small" href="files/computer_science_notes.pdf" download="Computer_Science_Notes.pdf">⬇ Download</a>
+          <button class="btn small outline js-download" data-file="files/computer_science_notes.pdf" data-name="Computer_Science_Notes.pdf">⚡ Force</button>
+        </div>
+      </article>
+    </div>
+    <div class="notes-footer">
+      <p>Tip: If a PDF opens in the browser, use the <strong>Force</strong> button to download directly.</p>
+    </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="section">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:your@email.com">gurvanshvirk5@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">@gurvansh.singh_</a></p>
+  <!-- CONTACT -->
+  <section id="contact" class="section container">
+    <div class="section-inner">
+      <h2>Contact & Follow</h2>
+      <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
+      <p>GitHub: <a href="https://github.com/gurvansh-0504" target="_blank">@gurvansh-0504</a></p>
+    </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 MyWeb. All rights reserved.</p>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Be a Topper — Notes for B.Tech CSE. Hosted on GitHub Pages.</p>
+    </div>
   </footer>
+
+  <!-- Minimal JS for nav, smooth scroll, and download fallback -->
+  <script>
+    // Year
+    document.getElementById('year').innerText = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const nav = document.getElementById('nav');
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      navToggle.classList.toggle('open');
+    });
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href');
+        if (href.length > 1) {
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // close mobile menu
+          nav.classList.remove('open');
+          navToggle.classList.remove('open');
+        }
+      });
+    });
+
+    // JS download fallback (fetch + blob)
+    async function forceDownload(url, filename) {
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error('Network response was not ok');
+        const blob = await res.blob();
+        const blobUrl = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = blobUrl;
+        a.download = filename || '';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(blobUrl);
+      } catch (err) {
+        alert('Download failed. Try the regular Download link or check file exists in the files/ folder.');
+        console.error(err);
+      }
+    }
+
+    document.querySelectorAll('.js-download').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const file = btn.getAttribute('data-file');
+        const name = btn.getAttribute('data-name');
+        forceDownload(file, name);
+      });
+    });
+  </script>
 </body>
 </html>
