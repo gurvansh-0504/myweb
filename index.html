@@ -8,8 +8,8 @@
 </head>
 <body>
   <!-- Navbar -->
-  <header>
-    <nav class="navbar">
+  <header class="site-header">
+    <nav class="navbar container">
       <div class="logo">Be a <span>Topper</span> 📘</div>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
@@ -22,7 +22,8 @@
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="hero-content">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
       <h1>🚀 Unlock Your B.Tech Potential</h1>
       <p>All subject-wise notes in one place. Free, simple, and exam-focused.</p>
       <a href="#subjects" class="btn">📖 Explore Notes</a>
@@ -30,13 +31,11 @@
   </section>
 
   <!-- Subjects Section -->
-  <section id="subjects" class="section">
+  <section id="subjects" class="section container">
     <h2>📚 Subjects</h2>
     <p class="section-sub">Choose a subject to preview or download notes</p>
 
     <div class="subjects-grid">
-
-      <!-- Mathematics -->
       <div class="subject-card">
         <h3>Mathematics</h3>
         <p>Calculus, Linear Algebra, Differential Equations</p>
@@ -46,7 +45,6 @@
         </div>
       </div>
 
-      <!-- Logical Thinking -->
       <div class="subject-card">
         <h3>Logical Thinking</h3>
         <p>Puzzles, Algorithms, Problem Solving</p>
@@ -56,7 +54,6 @@
         </div>
       </div>
 
-      <!-- Communication -->
       <div class="subject-card">
         <h3>Communication</h3>
         <p>Technical Writing, Presentation Skills</p>
@@ -66,7 +63,6 @@
         </div>
       </div>
 
-      <!-- Semiconductor -->
       <div class="subject-card">
         <h3>Semiconductors</h3>
         <p>PN Junctions, Diodes, Devices</p>
@@ -76,7 +72,6 @@
         </div>
       </div>
 
-      <!-- Engineering Physics -->
       <div class="subject-card">
         <h3>Engineering Physics</h3>
         <p>Mechanics, Waves, Modern Physics</p>
@@ -86,7 +81,6 @@
         </div>
       </div>
 
-      <!-- Computer Science -->
       <div class="subject-card">
         <h3>Computer Science</h3>
         <p>DSA, DBMS, OS, Networks</p>
@@ -98,15 +92,15 @@
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="section about">
+  <!-- About -->
+  <section id="about" class="section container">
     <h2>👨‍🎓 About</h2>
     <p>Hi, I’m <strong>Gurvansh</strong>. I built <b>Be a Topper</b> to make life easier for B.Tech students. 
     Every subject is neatly organized with downloadable PDFs. Study faster. Revise smarter.</p>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="section contact">
+  <!-- Contact -->
+  <section id="contact" class="section container">
     <h2>📩 Contact</h2>
     <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
     <p>GitHub: <a href="https://github.com/yourusername" target="_blank">@yourusername</a></p>
@@ -114,10 +108,12 @@
 
   <!-- Footer -->
   <footer>
-    <p>© <span id="year"></span> Be a Topper. All Rights Reserved.</p>
+    <div class="container">
+      <p>© <span id="year"></span> Be a Topper. All Rights Reserved.</p>
+    </div>
   </footer>
 
-  <!-- PDF Preview Modal -->
+  <!-- PDF Modal -->
   <div id="pdfModal" class="modal">
     <div class="modal-content">
       <span class="close-btn">&times;</span>
@@ -125,34 +121,22 @@
     </div>
   </div>
 
-  <!-- JS -->
   <script>
     document.getElementById("year").innerText = new Date().getFullYear();
 
-    // Modal PDF preview
     const modal = document.getElementById("pdfModal");
     const pdfFrame = document.getElementById("pdfFrame");
     const closeBtn = document.querySelector(".close-btn");
 
     document.querySelectorAll(".preview-btn").forEach(btn => {
       btn.addEventListener("click", () => {
-        const file = btn.dataset.file;
-        pdfFrame.src = file;
+        pdfFrame.src = btn.dataset.file;
         modal.style.display = "flex";
       });
     });
 
-    closeBtn.onclick = () => {
-      modal.style.display = "none";
-      pdfFrame.src = "";
-    };
-
-    window.onclick = (e) => {
-      if (e.target == modal) {
-        modal.style.display = "none";
-        pdfFrame.src = "";
-      }
-    };
+    closeBtn.onclick = () => { modal.style.display = "none"; pdfFrame.src = ""; };
+    window.onclick = (e) => { if (e.target == modal) { modal.style.display = "none"; pdfFrame.src = ""; } };
   </script>
 </body>
 </html>
