@@ -3,22 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Be a Topper — Notes & Study Material</title>
+  <title>Be a Topper — Study Hub</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
         <div class="logo">Be a <span>Topper</span></div>
-        <div class="tag">B.Tech CSE — Notes & Resources</div>
+        <div class="tag">Smart Study Hub for B.Tech CSE</div>
       </div>
 
       <nav class="nav" id="nav">
         <ul>
           <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#notes">Notes</a></li>
+          <li><a href="#subjects">Subjects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -33,121 +36,40 @@
   <section id="home" class="hero">
     <div class="container hero-grid">
       <div class="hero-left">
-        <h1>Notes & Study Material for B.Tech CSE</h1>
-        <p>Subject-wise downloadable notes, practice questions, and reference material — free to use and share. Organized for quick access and exam-ready revision.</p>
+        <h1>All Your Notes. One Hub.</h1>
+        <p>Explore subject-wise curated notes, multiple PDFs, practice material, and revision guides — free, organized, and beautiful.</p>
         <div class="hero-cta">
-          <a class="btn" href="#notes">Explore Notes</a>
-          <a class="btn ghost" href="#contact">Contact Me</a>
+          <a class="btn" href="#subjects">Explore Subjects</a>
         </div>
       </div>
       <div class="hero-right">
-        <div class="card-stats">
-          <div class="stat">
-            <div class="num">6</div>
-            <div class="label">Subjects</div>
-          </div>
-          <div class="stat">
-            <div class="num">100+</div>
-            <div class="label">Pages (sample)</div>
-          </div>
-          <div class="stat">
-            <div class="num">Free</div>
-            <div class="label">Hosted on GitHub</div>
-          </div>
+        <div class="animated-illustration">
+          📚✨
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <div class="container section-inner">
-      <h2>About This Hub</h2>
-      <p>Hi, I'm <strong>Gurvansh</strong>. I created this hub to share concise, exam-focused notes for Computer Science B.Tech students — organized subject-wise so you can quickly download what you need and get back to studying.</p>
-    </div>
-  </section>
-
-  <!-- NOTES / DOWNLOADS -->
-  <section id="notes" class="section">
+  <!-- SUBJECTS -->
+  <section id="subjects" class="section">
     <div class="container">
       <div class="section-header">
-        <h2>Download Notes — Subject-wise</h2>
-        <p>Click the download button next to any subject to get the notes. All resources are completely free to use and share.</p>
+        <h2>Select a Subject</h2>
+        <p>Click a subject to see all uploaded notes</p>
       </div>
 
-      <div class="grid cards">
-        <!-- Maths -->
-        <article class="card">
-          <div class="card-head">
-            <h3>Mathematics</h3>
-            <p class="sub">Calculus | Linear Algebra | Differential Equations</p>
-          </div>
-          <div class="card-actions">
-            <a class="btn small" href="files/maths_notes.pdf" download="Maths_Notes.pdf">⬇ Download</a>
-          </div>
-        </article>
-
-        <!-- Logical Thinking -->
-        <article class="card">
-          <div class="card-head">
-            <h3>Logical Thinking</h3>
-            <p class="sub">Problem Solving | Puzzles | Algorithms Thinking</p>
-          </div>
-          <div class="card-actions">
-            <a class="btn small" href="files/logical_thinking_notes.pdf" download="Logical_Thinking_Notes.pdf">⬇ Download</a>
-          </div>
-        </article>
-
-        <!-- Communication -->
-        <article class="card">
-          <div class="card-head">
-            <h3>Communication</h3>
-            <p class="sub">Technical Writing | Presentation Tips | Report Writing</p>
-          </div>
-          <div class="card-actions">
-            <a class="btn small" href="files/communication_notes.pdf" download="Communication_Notes.pdf">⬇ Download</a>
-          </div>
-        </article>
-
-        <!-- Semiconductor -->
-        <article class="card">
-          <div class="card-head">
-            <h3>Semiconductor</h3>
-            <p class="sub">Materials | PN Junctions | Devices</p>
-          </div>
-          <div class="card-actions">
-            <a class="btn small" href="files/semiconductor_notes.pdf" download="Semiconductor_Notes.pdf">⬇ Download</a>
-          </div>
-        </article>
-
-        <!-- Engineering Physics -->
-        <article class="card">
-          <div class="card-head">
-            <h3>Engineering Physics</h3>
-            <p class="sub">Mechanics | Waves | Modern Physics</p>
-          </div>
-          <div class="card-actions">
-            <a class="btn small" href="files/engineering_physics_notes.pdf" download="Engineering_Physics_Notes.pdf">⬇ Download</a>
-          </div>
-        </article>
-
-        <!-- Computer Science -->
-        <article class="card">
-          <div class="card-head">
-            <h3>Computer Science</h3>
-            <p class="sub">Data Structures | OS | DBMS | Networks</p>
-          </div>
-          <div class="card-actions">
-            <a class="btn small" href="files/computer_science_notes.pdf" download="Computer_Science_Notes.pdf">⬇ Download</a>
-          </div>
-        </article>
-      </div>
-      
-      <div class="download-info">
-        <p><strong>Note:</strong> If you're having trouble downloading files, right-click the download button and select "Save link as..."</p>
-      </div>
+      <div id="subjectGrid" class="grid cards"></div>
     </div>
   </section>
+
+  <!-- MODAL for notes -->
+  <div id="notesModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h3 id="modalTitle"></h3>
+      <div id="notesList"></div>
+    </div>
+  </div>
 
   <!-- CONTACT -->
   <section id="contact" class="section">
@@ -155,56 +77,16 @@
       <h2>Contact & Follow</h2>
       <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
       <p>GitHub: <a href="https://github.com/gurvansh-0504" target="_blank">@gurvansh-0504</a></p>
-      <p>Request notes: <a href="mailto:your@email.com?subject=Note Request">Send me a request</a></p>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> Be a Topper — Notes for B.Tech CSE. Hosted on GitHub Pages.</p>
-      <p class="footer-links">
-        <a href="#home">Home</a> | 
-        <a href="#about">About</a> | 
-        <a href="#notes">Notes</a> | 
-        <a href="#contact">Contact</a>
-      </p>
+      <p>© <span id="year"></span> Be a Topper — Study Hub. Built with ❤️</p>
     </div>
   </footer>
 
-  <script>
-    // Year
-    document.getElementById('year').innerText = new Date().getFullYear();
-
-    // Mobile nav toggle
-    const navToggle = document.getElementById('navToggle');
-    const nav = document.getElementById('nav');
-    navToggle.addEventListener('click', () => {
-      nav.classList.toggle('open');
-      navToggle.classList.toggle('open');
-    });
-
-    // Smooth scroll for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', (e) => {
-        const href = a.getAttribute('href');
-        if (href.length > 1) {
-          e.preventDefault();
-          document.querySelector(href).scrollIntoView({ behavior: 'smooth', block: 'start' });
-          // close mobile menu
-          nav.classList.remove('open');
-          navToggle.classList.remove('open');
-        }
-      });
-    });
-    
-    // Add download tracking (optional)
-    document.querySelectorAll('a[download]').forEach(link => {
-      link.addEventListener('click', function() {
-        const fileName = this.getAttribute('download');
-        console.log(`Download started: ${fileName}`);
-        // Here you could add analytics tracking
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
