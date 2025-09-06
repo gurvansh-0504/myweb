@@ -1,92 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Be a Topper — Study Hub</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Be a Topper - Notes Hub</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <div class="logo">Be a <span>Topper</span></div>
-        <div class="tag">Smart Study Hub for B.Tech CSE</div>
-      </div>
-
-      <nav class="nav" id="nav">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#subjects">Subjects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Be a Topper 📚</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#subjects">Subjects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="container hero-grid">
-      <div class="hero-left">
-        <h1>All Your Notes. One Hub.</h1>
-        <p>Explore subject-wise curated notes, multiple PDFs, practice material, and revision guides — free, organized, and beautiful.</p>
-        <div class="hero-cta">
-          <a class="btn" href="#subjects">Explore Subjects</a>
-        </div>
-      </div>
-      <div class="hero-right">
-        <div class="animated-illustration">
-          📚✨
-        </div>
-      </div>
+    <div class="hero-text">
+      <h1>Welcome to Be a Topper 🚀</h1>
+      <p>Your one-stop hub for B.Tech Computer Science notes and study material.</p>
+      <a href="#subjects" class="btn">Start Learning</a>
     </div>
   </section>
 
-  <!-- SUBJECTS -->
+  <!-- Subjects Section -->
   <section id="subjects" class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Select a Subject</h2>
-        <p>Click a subject to see all uploaded notes</p>
+    <h2>📖 Subjects</h2>
+    <div class="subjects-grid">
+
+      <!-- Mathematics -->
+      <div class="subject-card">
+        <h3>Mathematics</h3>
+        <p>Calculus, Algebra, Differential Equations</p>
+        <a href="files/maths_notes.pdf" download class="btn">⬇ Download Notes</a>
       </div>
 
-      <div id="subjectGrid" class="grid cards"></div>
+      <!-- Logical Thinking -->
+      <div class="subject-card">
+        <h3>Logical Thinking</h3>
+        <p>Problem Solving, Algorithms, Puzzles</p>
+        <a href="files/logical_notes.pdf" download class="btn">⬇ Download Notes</a>
+      </div>
+
+      <!-- Communication -->
+      <div class="subject-card">
+        <h3>Communication</h3>
+        <p>Technical Writing, Presentations</p>
+        <a href="files/communication_notes.pdf" download class="btn">⬇ Download Notes</a>
+      </div>
+
+      <!-- Semiconductor -->
+      <div class="subject-card">
+        <h3>Semiconductor</h3>
+        <p>PN Junctions, Devices, Applications</p>
+        <a href="files/semiconductor_notes.pdf" download class="btn">⬇ Download Notes</a>
+      </div>
+
+      <!-- Engineering Physics -->
+      <div class="subject-card">
+        <h3>Engineering Physics</h3>
+        <p>Mechanics, Modern Physics</p>
+        <a href="files/physics_notes.pdf" download class="btn">⬇ Download Notes</a>
+      </div>
+
+      <!-- Computer Science -->
+      <div class="subject-card">
+        <h3>Computer Science</h3>
+        <p>DSA, Operating Systems, DBMS, Networks</p>
+        <a href="files/cs_notes.pdf" download class="btn">⬇ Download Notes</a>
+      </div>
     </div>
   </section>
 
-  <!-- MODAL for notes -->
-  <div id="notesModal" class="modal">
-    <div class="modal-content">
-      <span id="closeModal" class="close">&times;</span>
-      <h3 id="modalTitle"></h3>
-      <div id="notesList"></div>
-    </div>
-  </div>
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2>👨‍🎓 About</h2>
+    <p>
+      Hi, I am <strong>Gurvansh</strong>. This website is created for students who want easy access 
+      to notes and study material for B.Tech in Computer Science. All notes are organized subject-wise 
+      with one-click download.
+    </p>
+  </section>
 
-  <!-- CONTACT -->
+  <!-- Contact Section -->
   <section id="contact" class="section">
-    <div class="container section-inner">
-      <h2>Contact & Follow</h2>
-      <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
-      <p>GitHub: <a href="https://github.com/gurvansh-0504" target="_blank">@gurvansh-0504</a></p>
-    </div>
+    <h2>📩 Contact</h2>
+    <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
+    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">@yourusername</a></p>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Be a Topper — Study Hub. Built with ❤️</p>
-    </div>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Be a Topper. All rights reserved.</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
