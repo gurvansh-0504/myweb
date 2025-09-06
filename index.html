@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Be a Topper - Notes Hub</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Be a Topper — B.Tech Notes Hub</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Navbar -->
   <header>
     <nav class="navbar">
-      <div class="logo">Be a Topper 📚</div>
+      <div class="logo">Be a <span>Topper</span> 📘</div>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#subjects">Subjects</a></li>
@@ -22,74 +22,91 @@
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="hero-text">
-      <h1>Welcome to Be a Topper 🚀</h1>
-      <p>Your one-stop hub for B.Tech Computer Science notes and study material.</p>
-      <a href="#subjects" class="btn">Start Learning</a>
+    <div class="hero-content">
+      <h1>🚀 Unlock Your B.Tech Potential</h1>
+      <p>All subject-wise notes in one place. Free, simple, and exam-focused.</p>
+      <a href="#subjects" class="btn">📖 Explore Notes</a>
     </div>
   </section>
 
   <!-- Subjects Section -->
   <section id="subjects" class="section">
-    <h2>📖 Subjects</h2>
+    <h2>📚 Subjects</h2>
+    <p class="section-sub">Choose a subject to preview or download notes</p>
+
     <div class="subjects-grid">
 
       <!-- Mathematics -->
       <div class="subject-card">
         <h3>Mathematics</h3>
-        <p>Calculus, Algebra, Differential Equations</p>
-        <a href="files/maths_notes.pdf" download class="btn">⬇ Download Notes</a>
+        <p>Calculus, Linear Algebra, Differential Equations</p>
+        <div class="actions">
+          <button class="btn preview-btn" data-file="files/maths_notes.pdf">👁 Preview</button>
+          <a href="files/maths_notes.pdf" download class="btn">⬇ Download</a>
+        </div>
       </div>
 
       <!-- Logical Thinking -->
       <div class="subject-card">
         <h3>Logical Thinking</h3>
-        <p>Problem Solving, Algorithms, Puzzles</p>
-        <a href="files/logical_notes.pdf" download class="btn">⬇ Download Notes</a>
+        <p>Puzzles, Algorithms, Problem Solving</p>
+        <div class="actions">
+          <button class="btn preview-btn" data-file="files/logical_notes.pdf">👁 Preview</button>
+          <a href="files/logical_notes.pdf" download class="btn">⬇ Download</a>
+        </div>
       </div>
 
       <!-- Communication -->
       <div class="subject-card">
         <h3>Communication</h3>
-        <p>Technical Writing, Presentations</p>
-        <a href="files/communication_notes.pdf" download class="btn">⬇ Download Notes</a>
+        <p>Technical Writing, Presentation Skills</p>
+        <div class="actions">
+          <button class="btn preview-btn" data-file="files/communication_notes.pdf">👁 Preview</button>
+          <a href="files/communication_notes.pdf" download class="btn">⬇ Download</a>
+        </div>
       </div>
 
       <!-- Semiconductor -->
       <div class="subject-card">
-        <h3>Semiconductor</h3>
-        <p>PN Junctions, Devices, Applications</p>
-        <a href="files/semiconductor_notes.pdf" download class="btn">⬇ Download Notes</a>
+        <h3>Semiconductors</h3>
+        <p>PN Junctions, Diodes, Devices</p>
+        <div class="actions">
+          <button class="btn preview-btn" data-file="files/semiconductor_notes.pdf">👁 Preview</button>
+          <a href="files/semiconductor_notes.pdf" download class="btn">⬇ Download</a>
+        </div>
       </div>
 
       <!-- Engineering Physics -->
       <div class="subject-card">
         <h3>Engineering Physics</h3>
-        <p>Mechanics, Modern Physics</p>
-        <a href="files/physics_notes.pdf" download class="btn">⬇ Download Notes</a>
+        <p>Mechanics, Waves, Modern Physics</p>
+        <div class="actions">
+          <button class="btn preview-btn" data-file="files/physics_notes.pdf">👁 Preview</button>
+          <a href="files/physics_notes.pdf" download class="btn">⬇ Download</a>
+        </div>
       </div>
 
       <!-- Computer Science -->
       <div class="subject-card">
         <h3>Computer Science</h3>
-        <p>DSA, Operating Systems, DBMS, Networks</p>
-        <a href="files/cs_notes.pdf" download class="btn">⬇ Download Notes</a>
+        <p>DSA, DBMS, OS, Networks</p>
+        <div class="actions">
+          <button class="btn preview-btn" data-file="files/cs_notes.pdf">👁 Preview</button>
+          <a href="files/cs_notes.pdf" download class="btn">⬇ Download</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="section">
+  <section id="about" class="section about">
     <h2>👨‍🎓 About</h2>
-    <p>
-      Hi, I am <strong>Gurvansh</strong>. This website is created for students who want easy access 
-      to notes and study material for B.Tech in Computer Science. All notes are organized subject-wise 
-      with one-click download.
-    </p>
+    <p>Hi, I’m <strong>Gurvansh</strong>. I built <b>Be a Topper</b> to make life easier for B.Tech students. 
+    Every subject is neatly organized with downloadable PDFs. Study faster. Revise smarter.</p>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="section">
+  <section id="contact" class="section contact">
     <h2>📩 Contact</h2>
     <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
     <p>GitHub: <a href="https://github.com/yourusername" target="_blank">@yourusername</a></p>
@@ -97,7 +114,45 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Be a Topper. All rights reserved.</p>
+    <p>© <span id="year"></span> Be a Topper. All Rights Reserved.</p>
   </footer>
+
+  <!-- PDF Preview Modal -->
+  <div id="pdfModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <iframe id="pdfFrame" src="" frameborder="0"></iframe>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    document.getElementById("year").innerText = new Date().getFullYear();
+
+    // Modal PDF preview
+    const modal = document.getElementById("pdfModal");
+    const pdfFrame = document.getElementById("pdfFrame");
+    const closeBtn = document.querySelector(".close-btn");
+
+    document.querySelectorAll(".preview-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const file = btn.dataset.file;
+        pdfFrame.src = file;
+        modal.style.display = "flex";
+      });
+    });
+
+    closeBtn.onclick = () => {
+      modal.style.display = "none";
+      pdfFrame.src = "";
+    };
+
+    window.onclick = (e) => {
+      if (e.target == modal) {
+        modal.style.display = "none";
+        pdfFrame.src = "";
+      }
+    };
+  </script>
 </body>
 </html>
