@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Be a Topper — B.Tech Notes Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -17,19 +18,23 @@
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </nav>
   </header>
 
- <!-- Hero Section -->
-<section id="home" class="hero">
-  <div class="hero-overlay"></div>
-  <div class="hero-content container">
-    <h1>🚀 Unlock Your B.Tech Potential</h1>
-    <p>All subject-wise notes in one place. Free, simple, and exam-focused.</p>
-    <a href="#subjects" class="btn">📖 Start Learning</a>
-  </div>
-</section>
-
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <h1>🚀 Unlock Your B.Tech Potential</h1>
+      <p>All subject-wise notes in one place. Free, simple, and exam-focused.</p>
+      <a href="#subjects" class="btn">📖 Start Learning</a>
+    </div>
+  </section>
 
   <!-- Subjects Section -->
   <section id="subjects" class="section container">
@@ -42,17 +47,19 @@
         <p>Calculus, Linear Algebra, Differential Equations</p>
         <div class="actions">
           <button class="btn preview-btn" data-file="files/maths_notes.pdf">👁 Preview</button>
-          <a href="files/maths_notes.pdf" download class="btn">⬇ Download</a>
+          <a href="files/maths_notes.pdf" download="Mathematics_Notes.pdf" class="btn download-btn">⬇ Download</a>
         </div>
+        <div class="file-info">PDF - 2.4 MB</div>
       </div>
 
       <div class="subject-card">
         <h3>Logical Thinking</h3>
         <p>Puzzles, Algorithms, Problem Solving</p>
         <div class="actions">
-          <button class="btn preview-btn" data-file="files/logical_notes.pdf">👁 Preview</button>
-          <a href="files/logical_notes.pdf" download class="btn">⬇ Download</a>
+          <button class="btn preview-btn" data-file="files/logical_thinking_notes.pdf">👁 Preview</button>
+          <a href="files/logical_thinking_notes.pdf" download="Logical_Thinking_Notes.pdf" class="btn download-btn">⬇ Download</a>
         </div>
+        <div class="file-info">PDF - 1.8 MB</div>
       </div>
 
       <div class="subject-card">
@@ -60,8 +67,9 @@
         <p>Technical Writing, Presentation Skills</p>
         <div class="actions">
           <button class="btn preview-btn" data-file="files/communication_notes.pdf">👁 Preview</button>
-          <a href="files/communication_notes.pdf" download class="btn">⬇ Download</a>
+          <a href="files/communication_notes.pdf" download="Communication_Notes.pdf" class="btn download-btn">⬇ Download</a>
         </div>
+        <div class="file-info">PDF - 2.1 MB</div>
       </div>
 
       <div class="subject-card">
@@ -69,8 +77,9 @@
         <p>PN Junctions, Diodes, Devices</p>
         <div class="actions">
           <button class="btn preview-btn" data-file="files/semiconductor_notes.pdf">👁 Preview</button>
-          <a href="files/semiconductor_notes.pdf" download class="btn">⬇ Download</a>
+          <a href="files/semiconductor_notes.pdf" download="Semiconductor_Notes.pdf" class="btn download-btn">⬇ Download</a>
         </div>
+        <div class="file-info">PDF - 3.2 MB</div>
       </div>
 
       <div class="subject-card">
@@ -78,8 +87,9 @@
         <p>Mechanics, Waves, Modern Physics</p>
         <div class="actions">
           <button class="btn preview-btn" data-file="files/physics_notes.pdf">👁 Preview</button>
-          <a href="files/physics_notes.pdf" download class="btn">⬇ Download</a>
+          <a href="files/physics_notes.pdf" download="Physics_Notes.pdf" class="btn download-btn">⬇ Download</a>
         </div>
+        <div class="file-info">PDF - 2.7 MB</div>
       </div>
 
       <div class="subject-card">
@@ -87,8 +97,9 @@
         <p>DSA, DBMS, OS, Networks</p>
         <div class="actions">
           <button class="btn preview-btn" data-file="files/cs_notes.pdf">👁 Preview</button>
-          <a href="files/cs_notes.pdf" download class="btn">⬇ Download</a>
+          <a href="files/cs_notes.pdf" download="Computer_Science_Notes.pdf" class="btn download-btn">⬇ Download</a>
         </div>
+        <div class="file-info">PDF - 4.5 MB</div>
       </div>
     </div>
   </section>
@@ -96,7 +107,7 @@
   <!-- About -->
   <section id="about" class="section container">
     <h2>👨‍🎓 About</h2>
-    <p>Hi, I’m <strong>Gurvansh</strong>. I built <b>Be a Topper</b> to make life easier for B.Tech students. 
+    <p>Hi, I'm <strong>Gurvansh</strong>. I built <b>Be a Topper</b> to make life easier for B.Tech students. 
     Every subject is neatly organized with downloadable PDFs. Study faster. Revise smarter.</p>
   </section>
 
@@ -104,7 +115,7 @@
   <section id="contact" class="section container">
     <h2>📩 Contact</h2>
     <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">@yourusername</a></p>
+    <p>GitHub: <a href="https://github.com/gurvansh-0504" target="_blank">@gurvansh-0504</a></p>
   </section>
 
   <!-- Footer -->
@@ -128,6 +139,8 @@
     const modal = document.getElementById("pdfModal");
     const pdfFrame = document.getElementById("pdfFrame");
     const closeBtn = document.querySelector(".close-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navLinks = document.querySelector(".nav-links");
 
     document.querySelectorAll(".preview-btn").forEach(btn => {
       btn.addEventListener("click", () => {
@@ -136,8 +149,23 @@
       });
     });
 
-    closeBtn.onclick = () => { modal.style.display = "none"; pdfFrame.src = ""; };
-    window.onclick = (e) => { if (e.target == modal) { modal.style.display = "none"; pdfFrame.src = ""; } };
+    closeBtn.onclick = () => { 
+      modal.style.display = "none"; 
+      pdfFrame.src = ""; 
+    };
+    
+    window.onclick = (e) => { 
+      if (e.target == modal) { 
+        modal.style.display = "none"; 
+        pdfFrame.src = ""; 
+      } 
+    };
+
+    // Mobile menu toggle
+    mobileMenu.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
   </script>
 </body>
 </html>
