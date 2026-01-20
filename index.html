@@ -1,171 +1,652 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Be a Topper — B.Tech Notes Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Morgan | Senior Front-End Developer & UI/UX Designer</title>
+    <meta name="description" content="Professional portfolio of Alex Morgan, Senior Front-End Developer and UI/UX Designer with 8+ years of experience.">
+    <meta name="keywords" content="front-end developer, UI/UX designer, web development, cybersecurity, portfolio">
+    <meta name="author" content="Alex Morgan">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+    
+    <style>
+        /* CSS-only animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes scroll {
+            0% { top: 10px; opacity: 1; }
+            100% { top: 30px; opacity: 0; }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        @keyframes slideInLeft {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideInRight {
+            from { transform: translateX(50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes progressBar {
+            from { width: 0; }
+            to { width: var(--target-width); }
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        /* CSS Variables for theme */
+        :root {
+            --primary-color: #4f46e5;
+            --primary-dark: #4338ca;
+            --secondary-color: #0ea5e9;
+            --text-color: #1e293b;
+            --text-light: #64748b;
+            --bg-color: #ffffff;
+            --bg-light: #f8fafc;
+            --bg-dark: #f1f5f9;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --transition: all 0.3s ease;
+            --radius: 8px;
+        }
+        
+        /* CSS-only theme toggle using :target */
+        body:target {
+            --primary-color: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary-color: #0ea5e9;
+            --text-color: #f8fafc;
+            --text-light: #cbd5e1;
+            --bg-color: #0f172a;
+            --bg-light: #1e293b;
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --border-color: #334155;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Hide the theme target link */
+        #theme-dark {
+            position: absolute;
+            left: -9999px;
+        }
+        
+        #theme-dark:target ~ .theme-toggle-btn .fa-moon {
+            display: none;
+        }
+        
+        #theme-dark:target ~ .theme-toggle-btn .fa-sun {
+            display: inline;
+        }
+        
+        #theme-light {
+            position: absolute;
+            left: -9999px;
+        }
+        
+        #theme-light:target ~ .theme-toggle-btn .fa-sun {
+            display: none;
+        }
+        
+        #theme-light:target ~ .theme-toggle-btn .fa-moon {
+            display: inline;
+        }
+    </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <header class="site-header">
-    <nav class="navbar container">
-      <div class="logo">Be a <span>Topper</span> 📘</div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#subjects">Subjects</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="menu-toggle" id="mobile-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content container">
-      <h1>🚀 Unlock Your B.Tech Potential</h1>
-      <p>All subject-wise notes in one place. Free, simple, and exam-focused.</p>
-      <a href="#subjects" class="btn">📖 Start Learning</a>
-    </div>
-  </section>
-
-  <!-- Subjects Section -->
-  <section id="subjects" class="section container">
-    <h2>📚 Subjects</h2>
-    <p class="section-sub">Choose a subject to preview or download notes</p>
-
-    <div class="subjects-grid">
-      <div class="subject-card">
-        <h3>Mathematics</h3>
-        <p>Calculus, Linear Algebra, Differential Equations</p>
-        <div class="actions">
-          <button class="btn preview-btn" data-file="files/maths_notes.pdf">👁 Preview</button>
-          <a href="files/maths_notes.pdf" download="Mathematics_Notes.pdf" class="btn download-btn">⬇ Download</a>
-        </div>
-        <div class="file-info">PDF - 2.4 MB</div>
-      </div>
-
-      <div class="subject-card">
-        <h3>Logical Thinking</h3>
-        <p>Puzzles, Algorithms, Problem Solving</p>
-        <div class="actions">
-          <button class="btn preview-btn" data-file="files/logical_thinking_notes.pdf">👁 Preview</button>
-          <a href="files/logical_thinking_notes.pdf" download="Logical_Thinking_Notes.pdf" class="btn download-btn">⬇ Download</a>
-        </div>
-        <div class="file-info">PDF - 1.8 MB</div>
-      </div>
-
-      <div class="subject-card">
-        <h3>Communication</h3>
-        <p>Technical Writing, Presentation Skills</p>
-        <div class="actions">
-          <button class="btn preview-btn" data-file="files/communication_notes.pdf">👁 Preview</button>
-          <a href="files/communication_notes.pdf" download="Communication_Notes.pdf" class="btn download-btn">⬇ Download</a>
-        </div>
-        <div class="file-info">PDF - 2.1 MB</div>
-      </div>
-
-      <div class="subject-card">
-        <h3>Semiconductors</h3>
-        <p>PN Junctions, Diodes, Devices</p>
-        <div class="actions">
-          <button class="btn preview-btn" data-file="files/semiconductor_notes.pdf">👁 Preview</button>
-          <a href="files/semiconductor_notes.pdf" download="Semiconductor_Notes.pdf" class="btn download-btn">⬇ Download</a>
-        </div>
-        <div class="file-info">PDF - 3.2 MB</div>
-      </div>
-
-      <div class="subject-card">
-        <h3>Engineering Physics</h3>
-        <p>Mechanics, Waves, Modern Physics</p>
-        <div class="actions">
-          <button class="btn preview-btn" data-file="files/physics_notes.pdf">👁 Preview</button>
-          <a href="files/physics_notes.pdf" download="Physics_Notes.pdf" class="btn download-btn">⬇ Download</a>
-        </div>
-        <div class="file-info">PDF - 2.7 MB</div>
-      </div>
-
-      <div class="subject-card">
-        <h3>Computer Science</h3>
-        <p>DSA, DBMS, OS, Networks</p>
-        <div class="actions">
-          <button class="btn preview-btn" data-file="files/cs_notes.pdf">👁 Preview</button>
-          <a href="files/cs_notes.pdf" download="Computer_Science_Notes.pdf" class="btn download-btn">⬇ Download</a>
-        </div>
-        <div class="file-info">PDF - 4.5 MB</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="section container">
-    <h2>👨‍🎓 About</h2>
-    <p>Hi, I'm <strong>Gurvansh</strong>. I built <b>Be a Topper</b> to make life easier for B.Tech students. 
-    Every subject is neatly organized with downloadable PDFs. Study faster. Revise smarter.</p>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section container">
-    <h2>📩 Contact</h2>
-    <p>Email: <a href="mailto:your@email.com">gurvanshvirk5@email.com</a></p>
-    <p>GitHub: <a href="https://github.com/gurvansh-0504" target="_blank">@gurvansh-0504</a></p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>© <span id="year"></span> Be a Topper. All Rights Reserved.</p>
-    </div>
-  </footer>
-
-  <!-- PDF Modal -->
-  <div id="pdfModal" class="modal">
-    <div class="modal-content">
-      <span class="close-btn">&times;</span>
-      <iframe id="pdfFrame" src="" frameborder="0"></iframe>
-    </div>
-  </div>
-
-  <script>
-    document.getElementById("year").innerText = new Date().getFullYear();
-
-    const modal = document.getElementById("pdfModal");
-    const pdfFrame = document.getElementById("pdfFrame");
-    const closeBtn = document.querySelector(".close-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const navLinks = document.querySelector(".nav-links");
-
-    document.querySelectorAll(".preview-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        pdfFrame.src = btn.dataset.file;
-        modal.style.display = "flex";
-      });
-    });
-
-    closeBtn.onclick = () => { 
-      modal.style.display = "none"; 
-      pdfFrame.src = ""; 
-    };
+    <!-- Hidden anchor links for CSS-only theme toggle -->
+    <a id="theme-dark" href="#theme-dark"></a>
+    <a id="theme-light" href="#theme-light"></a>
     
-    window.onclick = (e) => { 
-      if (e.target == modal) { 
-        modal.style.display = "none"; 
-        pdfFrame.src = ""; 
-      } 
-    };
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#home" class="logo">AM</a>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#theme-dark" class="theme-toggle-btn">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun" style="display: none;"></i>
+                </a>
+            </div>
+            <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle">
+            <label for="mobile-menu-toggle" class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <div class="mobile-menu">
+                <div class="mobile-menu-header">
+                    <a href="#home" class="logo">AM</a>
+                    <label for="mobile-menu-toggle" class="mobile-menu-close">
+                        <i class="fas fa-times"></i>
+                    </label>
+                </div>
+                <div class="mobile-menu-links">
+                    <a href="#home" class="mobile-nav-link">Home</a>
+                    <a href="#about" class="mobile-nav-link">About</a>
+                    <a href="#skills" class="mobile-nav-link">Skills</a>
+                    <a href="#projects" class="mobile-nav-link">Projects</a>
+                    <a href="#experience" class="mobile-nav-link">Experience</a>
+                    <a href="#contact" class="mobile-nav-link">Contact</a>
+                    <div class="mobile-theme-toggle">
+                        <span>Dark Mode</span>
+                        <a href="#theme-dark" class="theme-switch">Off</a>
+                        <a href="#theme-light" class="theme-switch">On</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    // Mobile menu toggle
-    mobileMenu.addEventListener('click', () => {
-      mobileMenu.classList.toggle('active');
-      navLinks.classList.toggle('active');
-    });
-  </script>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-subtitle" style="animation: fadeIn 0.8s ease 0.2s both;">Hello, I'm</p>
+                <h1 class="hero-title" style="animation: fadeIn 0.8s ease 0.4s both;">Alex Morgan</h1>
+                <h2 class="hero-role" style="animation: fadeIn 0.8s ease 0.6s both;">Senior Front-End Developer & <span class="highlight">UI/UX Designer</span></h2>
+                <p class="hero-description" style="animation: fadeIn 0.8s ease 0.8s both;">
+                    I create secure, accessible, and performant digital experiences with 8+ years of expertise in modern web technologies and cybersecurity principles.
+                </p>
+                <div class="hero-buttons" style="animation: fadeIn 0.8s ease 1s both;">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-shape shape-1" style="animation: float 6s ease-in-out infinite;"></div>
+                <div class="floating-shape shape-2" style="animation: float 6s ease-in-out infinite 2s;"></div>
+                <div class="floating-shape shape-3" style="animation: float 6s ease-in-out infinite 4s;"></div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <div class="mouse">
+                <div class="wheel" style="animation: scroll 2s infinite;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Get to know me better</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a passionate Senior Front-End Developer and UI/UX Designer with over 8 years of experience specializing in creating modern, responsive web applications with a focus on security, accessibility, and performance.
+                    </p>
+                    <p>
+                        My background in both development and cybersecurity allows me to build applications that are not only visually appealing but also secure by design. I believe in creating digital experiences that are inclusive, efficient, and delightful to use.
+                    </p>
+                    <p>
+                        When I'm not coding, I contribute to open-source projects, write technical articles, and speak at developer conferences about web security and modern front-end practices.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>8+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat">
+                            <h3>120+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat">
+                            <h3>45+</h3>
+                            <p>Happy Clients</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-frame">
+                        <div class="frame-decoration"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <p class="section-subtitle">My technical capabilities</p>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Frontend Development</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>HTML5 / CSS3</span>
+                                <span>98%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--target-width: 98%; animation: progressBar 1.5s ease forwards 0.2s;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>JavaScript / TypeScript</span>
+                                <span>96%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--target-width: 96%; animation: progressBar 1.5s ease forwards 0.4s;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>React / Next.js</span>
+                                <span>94%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--target-width: 94%; animation: progressBar 1.5s ease forwards 0.6s;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Vue.js / Nuxt.js</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--target-width: 90%; animation: progressBar 1.5s ease forwards 0.8s;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="skill-category-title">UI/UX Design</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Figma / Adobe XD</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--target-width: 95%; animation: progressBar 1.5s ease forwards 1s;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>User Research</span>
+                                <span>92%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--target-width: 92%; animation: progressBar 1.5s ease forwards 1.2s;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Prototyping</span>
+                                <span>96%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--target-width: 96%; animation: progressBar 1.5s ease forwards 1.4s;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Design Systems</span>
+                                <span>93%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--target-width: 93%; animation: progressBar 1.5s ease forwards 1.6s;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Cybersecurity & Tools</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Web Security</span>
+                                <span>91%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--target-width: 91%; animation: progressBar 1.5s ease forwards 1.8s;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Git / CI/CD</span>
+                                <span>97%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--target-width: 97%; animation: progressBar 1.5s ease forwards 2s;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Testing (Jest, Cypress)</span>
+                                <span>89%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--target-width: 89%; animation: progressBar 1.5s ease forwards 2.2s;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Performance Optimization</span>
+                                <span>94%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--target-width: 94%; animation: progressBar 1.5s ease forwards 2.4s;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">My recent work</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>Security</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">SecureBank Dashboard</h3>
+                        <p class="project-description">
+                            A financial dashboard with advanced security features, real-time data visualization, and multi-factor authentication.
+                        </p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>TypeScript</span>
+                            <span>Chart.js</span>
+                            <span>JWT Auth</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#0" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="#0" class="project-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-tags">
+                            <span>Vue.js</span>
+                            <span>Firebase</span>
+                            <span>PWA</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">HealthTrack Pro</h3>
+                        <p class="project-description">
+                            A healthcare Progressive Web App for tracking medical records with offline functionality and secure data encryption.
+                        </p>
+                        <div class="project-tech">
+                            <span>Vue.js</span>
+                            <span>Firebase</span>
+                            <span>PWA</span>
+                            <span>IndexedDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#0" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="#0" class="project-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-tags">
+                            <span>Next.js</span>
+                            <span>GraphQL</span>
+                            <span>Design System</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">DesignHub Platform</h3>
+                        <p class="project-description">
+                            A collaborative design platform with version control, design system management, and real-time collaboration.
+                        </p>
+                        <div class="project-tech">
+                            <span>Next.js</span>
+                            <span>GraphQL</span>
+                            <span>MongoDB</span>
+                            <span>WebSockets</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#0" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="#0" class="project-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Experience & Education</h2>
+                <p class="section-subtitle">My professional journey</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2021 - Present</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Senior Front-End Developer</h3>
+                        <p class="timeline-company">TechVision Inc.</p>
+                        <p class="timeline-description">
+                            Lead front-end development for enterprise applications, implement security best practices, mentor junior developers, and optimize application performance.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2018 - 2021</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">UI/UX Developer</h3>
+                        <p class="timeline-company">Digital Solutions LLC</p>
+                        <p class="timeline-description">
+                            Designed and developed user interfaces for web and mobile applications, conducted user research, and created design systems for consistency.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2015 - 2018</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Front-End Developer</h3>
+                        <p class="timeline-company">WebCraft Studio</p>
+                        <p class="timeline-description">
+                            Developed responsive websites and web applications, collaborated with designers to implement pixel-perfect interfaces, and improved site accessibility.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2011 - 2015</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">B.Sc. Computer Science</h3>
+                        <p class="timeline-company">University of Technology</p>
+                        <p class="timeline-description">
+                            Graduated with honors. Specialized in software engineering, web technologies, and cybersecurity fundamentals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="certifications">
+                <h3 class="certifications-title">Certifications</h3>
+                <div class="certifications-grid">
+                    <div class="certification-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Certified Ethical Hacker</h4>
+                        <p>EC-Council</p>
+                    </div>
+                    <div class="certification-card">
+                        <i class="fab fa-react"></i>
+                        <h4>React Developer Certification</h4>
+                        <p>Meta</p>
+                    </div>
+                    <div class="certification-card">
+                        <i class="fas fa-user-check"></i>
+                        <h4>Professional UX Designer</h4>
+                        <p>Google</p>
+                    </div>
+                    <div class="certification-card">
+                        <i class="fas fa-lock"></i>
+                        <h4>Web Security Fundamentals</h4>
+                        <p>OWASP</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's work together</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 class="contact-info-title">Contact Information</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>hello@alexmorgan.dev</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>San Francisco, CA</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#0" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#0" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#0" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#0" class="social-link">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" action="#contact" method="get">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <div class="form-message">
+                        <!-- Message will appear here on form submit -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="#home" class="footer-logo">AM</a>
+                <p class="footer-text">© 2023 Alex Morgan. All rights reserved.</p>
+                <a href="#home" class="back-to-top">
+                    <i class="fas fa-chevron-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
